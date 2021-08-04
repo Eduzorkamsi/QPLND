@@ -2,4 +2,24 @@
 
 .ant-layout-header {
   background: none;
+  height: unset;
+  line-height: unset;
+}
+
+.ant-menu {
+  background: none;
+}
+
+.ant-layout {
+  border: none;
+}
+
+.ant-layout-footer {
+  background: none;
+}
+
+.ant-btn {
+  background: #000;
+  border: none;
+  color: #fff;
 }

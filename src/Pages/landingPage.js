@@ -1,48 +1,83 @@
-import { Layout, Menu, Breadcrumb, Button } from "antd";
+import { Layout, Button } from "antd";
 import "../styles/landingPage.css";
+import background from "../assets/orange1.png";
+import Logo1 from "../assets/logo1.png";
+import Blackrec from "../assets/black.png";
+import FirstContent from "./firstContent";
 
 const LandingPage = () => {
   const { Header, Content, Footer } = Layout;
 
   return (
     <Layout>
-      <img src="orange1.png" alt="orange1" />
       <Header
         style={{
-          position: "fixed",
-          zIndex: 1,
+          //   position: "fixed",
+          // zIndex: 1,
           width: "100%",
-          display: "flex",
-          flexDirection: "row",
-          marginTop: 10,
+
+          backgroundImage: `url(${background})`,
         }}
       >
-        <div className="logo">
-          <img src="logo1.png" alt="logo1" />
+        <div
+          style={{
+            marginTop: 20,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
+        >
+          <div className="logo">
+            <img src={Logo1} alt="logo1" />
+          </div>
+
+          <Button>Join waitlist</Button>
         </div>
-        <Menu mode="horizontal">
-          <Menu.Item key="3">
-            <Button>Join waitlist</Button>
-          </Menu.Item>
-        </Menu>
+        <FirstContent />
       </Header>
-      <Content
-        className="site-layout"
-        style={{ padding: "0 50px", marginTop: 64 }}
-      >
-        <Breadcrumb style={{ margin: "16px 0" }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
+      <Content className="site-layout" style={{ marginTop: 0 }}>
         <div
           className="site-layout-background"
-          style={{ padding: 24, minHeight: 380 }}
+          style={{ padding: 24, minHeight: 380, background: "#2D2B2B" }}
+        >
+          Content
+        </div>
+        <div
+          className="site-layout-background"
+          style={{ padding: 24, minHeight: 380, background: "#FFFFFF" }}
+        >
+          Content
+        </div>
+        <div
+          className="site-layout-background"
+          style={{ padding: 24, minHeight: 380, background: "#1F1F1F" }}
+        >
+          Content
+        </div>
+        <div
+          className="site-layout-background"
+          style={{ padding: 24, minHeight: 380, background: "#000000" }}
         >
           Content
         </div>
       </Content>
-      <Footer style={{ textAlign: "center" }}>Quickpickup (c) 2021</Footer>
+      <div style={{ backgroundImage: `url(${Blackrec})` }}>
+        <div
+          style={{
+            marginTop: 20,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
+        >
+          <div className="logo">
+            <img src={Logo1} alt="logo1" />
+          </div>
+
+          <Button>Join waitlist</Button>
+        </div>
+        <Footer style={{ textAlign: "center" }}>Quickpickup (c) 2021</Footer>
+      </div>
     </Layout>
   );
 };
